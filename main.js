@@ -240,3 +240,52 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+
+const btn = getElementById('vis-btn');
+
+btn.addEventListener('click', ()=> {
+  const form = document.getElementById('form');
+  if(form.style.display === 'none') {
+    form.style.display = 'block';
+  } else {
+    form.display.style = 'none';
+  }
+});
+
+  const renderToDom = (divId, htmlToRender) => {
+    const selectedDiv = document.querySelector(divId);
+    selectedDiv.innerHTML = htmlToRender;
+  };
+
+  const cardsOnDom = (array) => {
+    let domString = "";
+    for (const pets of array) {
+      domString += `<div class="card" style="width: 18rem;">
+      <img src="${pets.image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">${pets.name}</p>
+        <button class="btn btn-danger" id="delete--${pets.id}">Delete</button>
+      </div>
+    </div>`;
+    }
+    renderToDom("#app", domString);
+  }
+
+  const filter = (array, color) => {
+    const colorArray = [];
+  
+    array.forEach((item) => {
+      if (item.favoriteColor === color) {
+        colorArray.push(item);
+      }
+    });
+  
+    return colorArray;
+  }
+
+  const startApp = () => {
+    cardsOnDom(pets);
+  }
+
+  startApp();
