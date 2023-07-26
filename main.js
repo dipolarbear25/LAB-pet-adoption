@@ -241,17 +241,21 @@ const pets = [
     }
   ];
 
+  const petcard = pets.array
 
-const btn = getElementById('vis-btn');
 
-btn.addEventListener('click', ()=> {
-  const form = document.getElementById('form');
-  if(form.style.display === 'none') {
-    form.style.display = 'block';
-  } else {
-    form.display.style = 'none';
-  }
-});
+
+
+  const btn = getElementById('vis-btn');
+
+  btn.addEventListener('click', ()=> {
+    const form = document.getElementById('form');
+    if(form.style.display === 'none') {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+  });
 
   const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
@@ -275,9 +279,9 @@ btn.addEventListener('click', ()=> {
   const filter = (array, color) => {
     const colorArray = [];
   
-    array.forEach((item) => {
-      if (item.favoriteColor === color) {
-        colorArray.push(item);
+    array.forEach((pets) => {
+      if (pets.favoriteColor === color) {
+        colorArray.push(pets);
       }
     });
   
