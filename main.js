@@ -241,9 +241,9 @@ const pets = [
     }
   ];
 
-  const petcard = pets.array
+  const petcard = document.getElementById("card-title").innerHTML = pets.id;
 
-
+  
 
 
   const btn = getElementById('vis-btn');
