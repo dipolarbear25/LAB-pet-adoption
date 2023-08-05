@@ -14,7 +14,7 @@ Once you have completed your entity, [compare with this one](https://dbdiagram.i
 
 ## Requirement - Part 2: HTML Representation of Data
 - Using the data provided in `main.js`, take a look at the format and update the data if needed based on the data example above.
-- Loop through each object and render each item to the DOM
+- z
 
 ![MockUp1](MockUp1.png)
 

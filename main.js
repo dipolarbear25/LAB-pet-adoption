@@ -241,21 +241,22 @@ const pets = [
     }
   ];
 
-  const petcard = document.getElementById("card-title").innerHTML = pets.id;
-
-  
 
 
-  const btn = getElementById('vis-btn');
 
-  btn.addEventListener('click', ()=> {
-    const form = document.getElementById('form');
-    if(form.style.display === 'none') {
-      form.style.display = 'block';
-    } else {
-      form.style.display = 'none';
-    }
-  });
+
+
+
+  const btn = getElementById("btn");
+
+   btn.addEventListener('click', ()=> {
+     const sort = document.getElementById();
+     if(form.style.display === 'none') {
+       form.style.display = 'block';
+     } else {
+       form.style.display = 'none';
+     }
+   });
 
   const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
@@ -264,32 +265,35 @@ const pets = [
 
   const cardsOnDom = (array) => {
     let domString = "";
-    for (const pets of array) {
+    for (const pet of array) {
       domString += `<div class="card" style="width: 18rem;">
-      <img src="${pets.image}" class="card-img-top" alt="...">
+      <img src="${pet.imageUrl}" class="card-img-top" alt="...">
       <div class="card-body">
-        <p class="card-text">${pets.name}</p>
-        <button class="btn btn-danger" id="delete--${pets.id}">Delete</button>
+        <p class="card-text">${pet.name}</p>
+        <p class="card=text">${pet.color}</p>
+        <p class="card=text">${pet.specialSkill}</p>
+        <p class="card=text">${pet.type}</p>
+        <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
       </div>
     </div>`;
     }
     renderToDom("#app", domString);
   }
 
-  const filter = (array, color) => {
-    const colorArray = [];
+   const filter = (array, color) => {
+     const colorArray = [];
   
-    array.forEach((pets) => {
-      if (pets.favoriteColor === color) {
-        colorArray.push(pets);
-      }
-    });
+     array.forEach((pets) => {
+       if (pets.favoriteColor === color) {
+         colorArray.push(pets);
+       }
+     });
   
-    return colorArray;
-  }
+     return colorArray;
+   }
 
   const startApp = () => {
-    cardsOnDom(pets);
-  }
+   cardsOnDom(pets);
+ }
 
-  startApp();
+ startApp();
